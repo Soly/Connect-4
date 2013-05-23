@@ -36,7 +36,7 @@ $(document).ready(function() {
 			if(holes[i].split(' ').length > 1) {
 				break;
 			}
-			nextHole = i+1;;
+			nextHole = i+1;
 		}
 
 		//console.log(holes);
@@ -60,12 +60,12 @@ $(document).ready(function() {
 			$('#grid').prepend($currPiece);
 			if(e.pageX - 310 < 0) {
 				$('.piece').css({
-		  			left: -10,
+		  			left: -10
 				});
 			}
 			else if(e.pageX - 310 > Number($('#grid').css('width').slice(0,length-2)) - Number($('.piece').css('width').slice(0,length-2))) {
 				$('.piece').css({
-		  			left: Number($('#grid').css('width').slice(0,length-2)) - Number($('.piece').css('width').slice(0,length-2)),
+		  			left: Number($('#grid').css('width').slice(0,length-2)) - Number($('.piece').css('width').slice(0,length-2))
 				});
 			}
 			else $('.piece').css({
@@ -86,14 +86,14 @@ $(document).ready(function() {
 		//console.log(holes);
 		
 		// horizontal
-		for(var i = 0; i < 7; i++) {
+		for(var i = 0; i < 6; i++) {
 			if(traverse(holes, 0, i, 1, 0) == color) {
 				console.log(color + ' wins!');
 				return true;
 			}
 		}
 		// vertical
-		for(var i = 0; i < 6; i++) {
+		for(var i = 0; i < 7; i++) {
 			if(traverse(holes, i, 0, 0, 1) == color) {
 				console.log(color + ' wins!');
 				return true;
